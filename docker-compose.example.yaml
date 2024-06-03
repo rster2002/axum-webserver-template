@@ -1,0 +1,16 @@
+services:
+  development-database:
+    image: docker.io/postgres
+    restart: always
+    environment:
+      POSTGRES_USER: extraterrestrial
+      POSTGRES_PASSWORD: wormhole
+      POSTGRES_DB: dysonsphere
+    ports:
+      - "5432:5432"
+
+  development-memcached:
+    image: docker.io/memcached
+    restart: always
+    ports:
+      - "11211:11211"
