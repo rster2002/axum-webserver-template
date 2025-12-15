@@ -1,5 +1,5 @@
 #[macro_use]
-extern crate log;
+extern crate tracing;
 
 use std::net::SocketAddr;
 use std::sync::Arc;
@@ -35,7 +35,7 @@ async fn main() {
         _ => {}
     }
 
-    env_logger::init();
+    tracing_subscriber::fmt::init();
 
     trace!("Creating start options");
     let start_options = StartOptions::from_env();
